@@ -33,7 +33,7 @@ async function run() {
     const reviewCollection = client.db("eventsDb").collection("review");
     const pricingCollection = client.db("eventsDb").collection("pricing");
 
-
+// event management
     app.get('/events', async (req, res) => {
         try{
           const result = await eventsCollection.find().toArray();
