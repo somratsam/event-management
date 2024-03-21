@@ -33,7 +33,7 @@ async function run() {
     const reviewCollection = client.db("eventsDb").collection("review");
     const pricingCollection = client.db("eventsDb").collection("pricing");
 
-// event managementdd
+
     app.get('/events', async (req, res) => {
         try{
           const result = await eventsCollection.find().toArray();
@@ -77,8 +77,8 @@ async function run() {
         const updatedEventData = req.body;
         
         const result = await eventsCollection.updateOne(
-            { _id: new ObjectId(eventId) }, // Filter
-            { $set: updatedEventData } // Update
+            { _id: new ObjectId(eventId) },
+            { $set: updatedEventData } 
         );
         
         if (result.modifiedCount === 1) {
